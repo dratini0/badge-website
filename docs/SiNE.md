@@ -58,8 +58,8 @@ Now EMWave has passed here is the clue list:
 
 ### Locator ID
 
-<!-- BC: AFAICT these images are *gone* unless we have a backup of the 2012 wiki
-![](../images/800px-SiNE_Front_Buttons.jpeg "800px-SiNE_Front_Buttons.jpeg") -->
+![](../images/800px-SiNE_Front_Buttons.jpeg "800px-SiNE_Front_Buttons.jpeg")
+
 Each
 badge is programmed with a unique ID, that is transmitted about 5 times
 a second. There will be Raspberry Pi's doted around the ship, collecting
@@ -80,8 +80,8 @@ as so no data was collected.
 
 ## Sponsors
 
-<!-- BC: AFAICT these images are *gone* unless we have a backup of the 2012 wiki
-![](../images/800px-SiNE_Back_Angle.JPG "800px-SiNE_Back_Angle.JPG") -->
+![](../images/800px-SiNE_Back_Angle.jpeg "800px-SiNE_Back_Angle.JPG")
+
 SiNE was only possible thanks to our sponsors:
 
 - [Twilio](http://www.twilio.com) A Cloud communications company
@@ -96,8 +96,8 @@ SiNE was only possible thanks to our sponsors:
 
 ### DevBoards
 
-<!-- BC: AFAICT these images are *gone* unless we have a backup of the 2012 wiki
-![](../images/DevBoards.JPG "DevBoards.JPG") -->
+![](../images/800px-DevBoards.jpeg "SiNE Development Boards")
+
 Before designing the final SiNE badge
 we built three development boards, not bothered about the looks, they
 were built to test the hardware and wiring between the parts.
@@ -109,8 +109,8 @@ the same time as the final badges were produced.
 
 ## Badge Hacking
 
-<!-- BC: AFAICT these images are *gone* unless we have a backup of the 2012 wiki
-![](../images/800px-SiNE_Schematic.png "800px-SiNE_Schematic.png") -->
+![SiNE Schematic](../images/800px-SiNE_Schematic.png) [full](../images/SiNE_Schematic.png)
+
 We actively encourage users to hack their badge better and hope the information
 provided below will help
 
