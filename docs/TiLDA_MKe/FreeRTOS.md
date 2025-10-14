@@ -37,7 +37,7 @@ those.
 ## Code structure
 
 - FreeRTOS has the concept of “Tasks” which work like threads. We’ve
-  wrappered them in a class called “Task” (for background stuff) and
+  wrapped them in a class called “Task” (for background stuff) and
   “Apps” (for foreground, one-at-a-time things)
 - Everything needs to be in the main EMF2014 folder. Subfolders are not
   allowed. This is an Arduino IDE restriction :(
@@ -55,7 +55,7 @@ those.
   general logging you can use Tilda::log()
 - If sending code to the badge using the Arduino IDE "Upload" button
   fails, even though the /dev/ttyACM0 (linux com port) is there, just
-  retry, twice if neccessary.
+  retry, twice if necessary.
 
 ## Full erase
 
@@ -227,7 +227,7 @@ it’s not thread-safe and you might end up with utter nonsense.
 
 The JTAG interface on the board provides powerful debugging facilities
 like breakpoints, backtraces, dumping memory, inspecting variables,
-checking task states, catching exeptions etc. To make this to work
+checking task states, catching exceptions etc. To make this to work
 requires additional hardware and software, see
 <a href="TiLDA_Debugging_using_JTAG" class="wikilink"
 title="TiLDA Debugging using JTAG">TiLDA Debugging using JTAG</a>.
@@ -243,20 +243,22 @@ just means you have to approach it slightly differently:
 
 Example: A simple app displaying the button code
 
-`void ButtonApp::task() {`
-`    ButtonSubscription allButtons = Tilda::createButtonSubscription(LIGHT | A | B | UP | DOWN | LEFT | RIGHT | CENTER);`
+```
+void ButtonApp::task() {
+    ButtonSubscription allButtons = Tilda::createButtonSubscription(LIGHT | A | B | UP | DOWN | LEFT | RIGHT | CENTER);
 
-`    while(true) {`
-`        Button button = allButtons.waitForPress(1000);`
-`        if (button == A) {`
-`            debug::log(“You pressed button A”);`
-`        } else if (button == LEFT) {`
-`            debug::log(“You pressed LEFT”);`
-`        } else if (button == NONE) {`
-`            debug::log(“No button has been pressed in 1000ms”); `
-`        }`
-`    }`
-`}`
+    while(true) {
+        Button button = allButtons.waitForPress(1000);
+        if (button == A) {
+            debug::log(“You pressed button A”);
+        } else if (button == LEFT) {
+            debug::log(“You pressed LEFT”);
+        } else if (button == NONE) {
+            debug::log(“No button has been pressed in 1000ms”); 
+        }
+    }
+}
+```
 
 ### ButtonSubscription Tilda::createButtonSubscription(<buttons>)
 
@@ -299,19 +301,21 @@ both leds will be set to the same color.
 
 Example: A simple color-changing task
 
-`void ColorfulTask::task() {`
-`    while(true) {`
-`        Tilda::setLedColor(LED1, {255, 0, 0}); // Red`
-`        Tilda::setLedColor(LED2, {0, 255, 0}); // Green`
-`        Tilda::delay(300);`
-`        Tilda::setLedColor(LED1, {0, 255, 0}); // Green`
-`        Tilda::setLedColor(LED2, {0, 0, 255}); // Blue`
-`        Tilda::delay(300);`
-`        Tilda::setLedColor(LED1, {0, 0, 255}); // Blue`
-`        Tilda::setLedColor(LED2, {255, 0, 0}); // Red`
-`        Tilda::delay(300);`
-`    }`
-`}`
+```
+void ColorfulTask::task() {
+    while(true) {
+        Tilda::setLedColor(LED1, {255, 0, 0}); // Red
+        Tilda::setLedColor(LED2, {0, 255, 0}); // Green
+        Tilda::delay(300);
+        Tilda::setLedColor(LED1, {0, 255, 0}); // Green
+        Tilda::setLedColor(LED2, {0, 0, 255}); // Blue
+        Tilda::delay(300);
+        Tilda::setLedColor(LED1, {0, 0, 255}); // Blue
+        Tilda::setLedColor(LED2, {255, 0, 0}); // Red
+        Tilda::delay(300);
+    }
+}
+```
 
 ## Display
 

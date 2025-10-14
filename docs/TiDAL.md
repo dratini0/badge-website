@@ -1,5 +1,10 @@
+TiDAL was our 2022 badge, our first foray into tiny badges, and our first badge
+with USB-C!
+
+
+
 To do an OTA Update and get the latest firmware make sure your battery
-is charged!
+is fully charged - the wifi chip will cause brownouts without the battery attached.
 
 You may have to get very close to an access point (within a couple of
 metres) for the WiFi to work. Sorry! The more busy an access point is,

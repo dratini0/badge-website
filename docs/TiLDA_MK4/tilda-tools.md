@@ -14,14 +14,8 @@ environment on the badge.
   repository](https://help.github.com/articles/cloning-a-repository/)
   for help). Alternatively you can download a ZIP file from the
   repository page.
-
-<!-- -->
-
 - Open a terminal in the Mk4-Apps/ directory. *tilda_tools* is in the
   root of this directory.
-
-<!-- -->
-
 - Windows Users - you will need to install Pyserial to get some commands
   working - Instructions
   [here](https://badge.emfcamp.org/wiki/TiLDA_MK4/Get_Started)

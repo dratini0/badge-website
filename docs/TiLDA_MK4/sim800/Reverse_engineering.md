@@ -6,7 +6,7 @@ added by other people, even if you determined the information to be
 false. Instead you could add text explaining why the existing content
 was wrong.
 
-## Usefull links
+## Useful links
 
 Page with firmware, update tool and instructions:
 <https://www.raviyp.com/embedded/214-learn-how-to-update-the-firmware-of-your-sim800-modules>

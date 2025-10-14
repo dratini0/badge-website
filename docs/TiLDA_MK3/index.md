@@ -1,35 +1,20 @@
-<figure>
-<img src="TiLDA_MK3_front.jpg" title="TiLDA_MK3_front.jpg" />
-<figcaption>TiLDA_MK3_front.jpg</figcaption>
-</figure>
+![](../images/TiLDA_MK3_front.jpg)
 
-## Using your badge
+!!! bug "If you just got your badge and it doesn't do anything"
 
-<div style="background-color: #FFFFDD; border: 1px solid #808000; padding: 5px;">
+    don't despair, quite a few of them need to be
+    [factory reset](reset.md) before showing the loading screen. Press and hold `MENU` while
+    quickly pressing the reset button at the back. Keep the `MENU` button
+    hold for another 2 seconds while the green light on the front is
+    blinking. Release it <i>while</i> the green light <b>and</b> the screen
+    back light is on. If you got it correct the red light should flash.
+    If this doesn't work you can [update the firmware](Firmware_Update.md)
 
-<strong>If you just got your badge and it doesn't do anything</strong>,
-don't despair, quite a few of them need to be
-<a href="TiLDA_MK3/reset" class="wikilink" title="factory reset">factory
-reset</a> before showing the loading screen. Press and hold `MENU` while
-quickly pressing the reset button at the back. Keep the `MENU` button
-hold for another 2 seconds while the green light on the front is
-blinking. Release it <i>while</i> the green light <b>and</b> the screen
-back light is on. If you got it correct the red light should flash.
-If this doesn't work you can
-<a href="TiLDA_MK3/Firmware_Update" class="wikilink"
-title="update the badge firmware">update the badge firmware</a>. If this
-doesn't work, please come and join us in \#emfcamp-badge on [Libera
-IRC](https://libera.chat/)
+!!! failure "App Library isn't working?"
 
-</div>
-
-<div style="background-color: #DDFFFF; border: 1px solid #808000; padding: 5px;">
-
-If you're having problems downloading some apps from the App Library
-<b>please update your badge via the App Library update option</b>. After
-a restart it should work much smoother.
-
-</div>
+    If you're having problems downloading some apps from the App Library
+    please update your badge via the App Library update option. After
+    a restart it should work much smoother.
 
 ### Assembly
 
@@ -74,7 +59,7 @@ reset button at the back.
 Your TiLDA Badge has built-in wifi support. It should all just work if
 you're at the campsite, but if you're on your own network you might have
 to tell the badge about it. For more information please have a look
-here: <a href="TiLDA_MK3/wifi" class="wikilink" title="WiFi">WiFi</a>
+here: [WiFi](API/wifi.md)
 
 <strong>A word of warning</strong>: During EMF the badge will use
 "emf-insecure". This is, as the name implies, not the most secure way of
@@ -92,31 +77,21 @@ extinguish when charging is complete
 ### Nothing works! Help!
 
 Don't worry, you can always "factory reset" your badge. Please follow
-these instructions: <a href="TiLDA_MK3/reset" class="wikilink"
-title="Resetting">Resetting</a>
+[these](reset.md) instructions.
 
-If everything else absolutely fails, you can try following these
-instructions (advanced):
-<a href="TiLDA_MK3/Firmware_Update" class="wikilink"
-title="TiLDA_MK3/Firmware_Update">TiLDA_MK3/Firmware_Update</a>
+If everything else absolutely fails, you can try following [these](Firmware_Update.md)
+instructions (advanced)
 
 ## Hacking your badge
 
-**<a href="TiLDA_MK3/Introduction_to_badge_hacking" class="wikilink"
-title="Badge Hacking Workshop Documentation">Badge Hacking Workshop
-Documentation</a>**
+[Badge Hacking Workshop Documentation](Introduction_to_badge_hacking.md)
 
 One of the main goals of TiLDA is to make hacking it as easy as
 possible. All you need to do so is a computer with USB and your badge.
 
-- **<a href="TiLDA_MK3/Get_Started" class="wikilink"
-  title="Step-by-step: How to get started">Step-by-step: How to get
-  started</a>**
-- **<a href="TiLDA_MK3/Run_Code" class="wikilink"
-  title="3 Ways to run code on your TiLDA">3 Ways to run code on your
-  TiLDA</a>**
-- <a href="TiLDA_MK3/App_Store_Submissions" class="wikilink"
-  title="App Store Submissions">App Store Submissions</a>
+- [Step-by-step: How to get started](Get_Started.md)
+- [3 Ways to run code on your TiLDA](Run_Code.md)
+- [App Store Submissions](apps/App_Store_Submissions.md)
 
 The badge itself runs code written in the computer language
 [Python](https://en.wikipedia.org/wiki/Python_(programming_language))
@@ -124,9 +99,7 @@ which is run by a bit of software called
 [Micropython](https://micropython.org/).
 
 For more information about the functions available please have a look at
-the
-<a href="#Badge_API" class="wikilink" title="Badge API">Badge API</a>
-section of this page.
+the [Badge API](API/index.md) section of this page.
 
 If you're already familiar with all this you can jump right into the
 topic of Apps. Apps can be shared via the EMF App Library or by copying
@@ -161,58 +134,6 @@ files](https://github.com/emfcamp/Mk3-Hardware/blob/master/case-final.dxf)
 The files used in the **Fab Lab Truck** for lasercutting are available
 here: <http://www.thingiverse.com/thing:1707973>
 
-## Badge API
-
-### Build-in
-
-- [documentation](http://docs.micropython.org/en/latest/pyboard/) -
-  General Micropython libarary
-- <a href="TiLDA_MK3/ugfx" class="wikilink" title="uGFX">uGFX</a> - The
-  TiLDA LCD colour screen
-- <a href="TiLDA_MK3/documentation/cc3100" class="wikilink"
-  title="CC3100">CC3100</a> - The wifi chip
-- <a href="TiLDA_MK3/rtc" class="wikilink" title="RTC">RTC</a> (real
-  time clock)
-- <a href="TiLDA_MK3/adc" class="wikilink" title="ADC">ADC</a> (analogue
-  reading)
-- <a href="TiLDA_MK3/timer" class="wikilink" title="Timer">Timer</a>
-- Microcontroller peripherals
-  [1](https://docs.micropython.org/en/latest/pyboard/library/pyb.html)
-  (Timers, PWM, serial,
-  <a href="TiLDA_MK3/spi" class="wikilink" title="SPI">SPI</a> etc)
-
-### TiLDA Libraries
-
-On top of the build-in modules above we have also created a bunch of
-helpful libraries written in python. If you go through the bootstrap
-process or use the App Library you should always have a full set of
-those on your badge. If for some reason this isn't the case you can
-download our repository from <https://github.com/emfcamp/Mk3-Firmware>
-and copy the `lib` folder onto your badge.
-
-TBD, for now please have a look at the libraries themselves:
-<https://github.com/emfcamp/Mk3-Firmware/tree/master/lib>
-
-- <a href="TiLDA_MK3/lib/buttons" class="wikilink"
-  title="buttons">buttons</a>
-- database
-- dialogs
-- filesystem
-- http_client
-- imu
-- wifi
-- NTP Example:
-  <https://gist.github.com/drrk/4a17c4394f93d0f9123560af056f6f30>
-- On board LED "<a href="TiLDA_MK3/NeoPixel" class="wikilink"
-  title="NeoPixel">NeoPixel</a>" example:
-  <https://github.com/mayhem/tilda-mk3-led-demo>
-
-Full hardware files are on GitHub
-[2](https://github.com/emfcamp/Mk3-Hardware)
-
-(feel free to add additional ideas, and create links new wiki pages to
-on-going projects, perhaps someone will want to contribute)
-
 ## Badge hardware
 
 TiLDA comes with a long list of very useful hardware. Some might be
@@ -229,7 +150,7 @@ obvious, but some are a bit hidden.
   defunct](https://badge.emfcamp.org/wiki/TiLDA_MK3/How_to_fix_NeoPixel)
 - MicroSD slot
 
-Harware files are available on GitHub
+Hardware files are available on GitHub
 [3](https://github.com/emfcamp/Mk3-Hardware).
 
 NOTE: The WS2812B is actually on pin PB13, not X2 as shown below!

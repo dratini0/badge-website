@@ -55,10 +55,9 @@ Containers can be used to group widgets together. They can also perform
 primitive drawing functions. When drawing widgets or primitives, the
 coordinates are relative to the top left corner of the container.
 
-Containers can be shown or hidden, and all the widgets will be redrawn
-(primitives are not widgets and are not redrawn). Containers can also be
-placed on top of other widgets. When the top container is hidden, the
-widgets below will be redrawn.
+Containers can be shown or hidden, and all the widgets will be redrawn.
+Containers can also be placed on top of other widgets. When the top
+container is hidden, the widgets below will be redrawn.
 
 Upon creation a style can be passed to a container, which will then be
 used by default by widgets created as part of that container. If no
@@ -68,18 +67,14 @@ The following example shows how to create a container, add an object and
 show it.
 
     c = ugfx.Container(100,100,200,100)
-    b = ugfx.Button(10, 10, 40, 30, "OK", parent=c)
+    b = ugfx.Button(10, 10, 40, 30, "OK", c)
     c.show()            # the container will not be shown until this point
-    c.fill_circle(5,5,5,ugfx.RED) #draws a small red circle. Note this has to be done after .show()
 
 ### Primitives
 
 All primitives can be drawn anywhere on the screen with, for example
 `ugfx.circle(..)`, or anywhere within a container, with
 `c=ugfx.Container(30,30,100,100); c.circle(..)`
-
-Note: The container must be shown *before* you can draw primitives in
-it. When hiding the container, all drawings are lost!
 
 #### Clear
 
@@ -100,11 +95,11 @@ eg. *ugfx.thickline(0,0,100,170,ugfx.YELLOW,7,0)*
 
 #### Circle
 
-`.circle(x, y, radius, colour)`
+`.circle(x, y, diameter, colour)`
 
-`.fill_circle(x, y, radius, colour)`
+`.fill_circle(x, y, diameter, colour)`
 
-Draws a circle at *x,y* of <radius> using *colour*, either with a 1
+Draws a circle at *x,y* of <diameter> using *colour*, either with a 1
 pixel border or filling the area.
 
 eg. *ugfx.circle(180,150,40,ugfx.RED)*
@@ -209,7 +204,7 @@ Detaches an input. See above for more details.
 
 `.destroy()`
 
-Frees up all the resources assoicated with the object. While the
+Frees up all the resources associated with the object. While the
 micropython garbage collector will clear any old objects, the graphics
 library also has its own memory area, which can become full if objects
 are not destroyed after they are needed.
@@ -323,11 +318,9 @@ See the [BARMS logger
 app](https://github.com/emfcamp/Mk3-Firmware/blob/master/apps/logger/main.py)
 for an example
 
-#### Imagebox
+#### ImageBox
 
-`.Imagebox(x, y, w, h, filename, *, cache=0, parent=None, style=None)`
-
-This displays an image box. This will automatically animate a passed gif
+`.ImageBox(x, y, w, h, filename, *, cache=0, parent=None, style=None)`
 
 #### Keyboard
 
@@ -366,7 +359,7 @@ the screen)
 
 This large memory as part of the screen means it can be driven by a
 microcontroller which may have a considerably smaller memory. The
-microcontroller therefore only needs to update the memory when it whats
+microcontroller therefore only needs to update the memory when it wants
 the content to change.
 
 Consider the scenario where the microcontroller wants to set the screen
@@ -381,7 +374,7 @@ starts reading the old colour in the bottom half of the memory.
 To avoid tearing the 'read line-pointer' should not cross the region the
 microcontroller is updating. Since the microcontroller writes to the
 screen slightly slower than the LCD reads it, providing the
-microntroller starts writes to the top of the memory just after the LCD
+microcontroller starts writes to the top of the memory just after the LCD
 starts reading from the top, the read and write pointers will not
 overlap, and tearing will not occur. To sync the microcontroller with
 the LCD 'read line-pointer,' there is a vsync/tear output (connected to

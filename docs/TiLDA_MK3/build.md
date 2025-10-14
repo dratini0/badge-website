@@ -57,7 +57,7 @@ And then restart the udev service:
 ## What to do when the firmware update.py script fails
 
 When attempting an update from linux, some users have hit timeouts
-during hte mass_erase step. This leaves the badge in an ususable state.
+during the mass_erase step. This leaves the badge in an unusable state.
 
     $ python update.py
     Hello - Welcome to the automated TiLDA firmware updater

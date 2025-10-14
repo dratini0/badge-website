@@ -61,5 +61,5 @@ here for historical interest
 - conductive thread pads next to lanyard
   - supply little bags of LEDs and thread for say £2
 - extra GPIO broken out
-  - ardiuno footprint?
+  - arduino footprint?
 - python/LUA would allow for beginners to hack the badge

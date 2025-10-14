@@ -224,7 +224,7 @@ the RX and TX LEDs
 
 ## Programming the badge in FreeRTOS
 
-See [this page](FreeRTOS) for information on howto program your badge using FreeRTOS
+See [this page](FreeRTOS.md) for information on howto program your badge using FreeRTOS
 
 ## Contribute
 

@@ -1,27 +1,15 @@
-<figure>
-<img src="TiLDA_Mk4_Front_with_sponsors.png"
-title="TiLDA_Mk4_Front_with_sponsors.png" />
-<figcaption>TiLDA_Mk4_Front_with_sponsors.png</figcaption>
-</figure>
+![](../images/TiLDA_Mk4_Front_with_sponsors.png)
 
 ## Using your badge
 
-<div style="background-color: #FFFFDD; border: 1px solid #808000; padding: 5px;">
+!!! bug "If you just got your badge and it doesn't do anything"
 
-<strong>If you just got your badge and it doesn't do anything</strong>,
-don't despair, quite a few of them need to be
-<a href="TiLDA_MK4/reset" class="wikilink" title="factory reset">factory
-reset</a> before showing the loading screen. Press and hold `MENU` while
-quickly pressing the reset button at the back. Keep the `MENU` button
-hold for another 2 seconds. Release it when both the red and green LED
-are lit. If you got it correct both LEDs should flash a few times.
-If this doesn't work you can
-<a href="TiLDA_MK4/Firmware_Update" class="wikilink"
-title="update the badge firmware">update the badge firmware</a>. If this
-doesn't work, please come and join us in \#emfcamp-badge on [Libera
-IRC](https://libera.chat/)
-
-</div>
+    don't despair, quite a few of them need to be
+    [factory reset](Factory_Reset.md) before showing the loading screen. Press and hold `MENU` while
+    quickly pressing the reset button at the back. Keep the `MENU` button
+    hold for another 2 seconds. Release it when both the red and green LED
+    are lit. If you got it correct both LEDs should flash a few times.
+    If this doesn't work you can [update the badge firmware](Firmware_Update.md).
 
 ### Updating your badge firmware
 
@@ -29,8 +17,7 @@ After (and during!) EMF the badge firmware was substantially fixed and
 improved, resolving issues with call handling and apps.
 
 Please update your badge firmware as soon as possible. You can find
-<a href="TiLDA_MK4/Firmware_Update" class="wikilink"
-title="documentation on this here">documentation on this here</a>.
+[documentation on this here](Firmware_Update.md).
 
 ### Assembly
 
@@ -112,7 +99,7 @@ length of coax. Seems to be an EMC issue, as using the pictured right
 angle antenna directly on the SMA does not work reliably. Time to get
 the Kapton tape and copper foil out...
 
-<img src="GSM_Antenna.jpg" title="File:GSM Antenna.jpg" />
+![](../images/GSM_Antenna.jpg "the GSM Antenna")
 
 ### Connecting over USB
 
@@ -165,13 +152,10 @@ The basic process is this:
 ### Nothing works! Help!
 
 Don't worry, you can always "factory reset" your badge. Please follow
-these instructions: <a href="TiLDA_MK4/reset" class="wikilink"
-title="Resetting">Resetting</a>
+[these](Factory_Reset.md) instructions
 
-If everything else absolutely fails, you can try following these
-instructions (advanced):
-<a href="TiLDA_MK4/Firmware_Update" class="wikilink"
-title="TiLDA_MK4/Firmware_Update">TiLDA_MK4/Firmware_Update</a>
+If everything else absolutely fails, you can try following [these](Firmware_Update.md)
+instructions (advanced)
 
 ## Hacking your badge
 
@@ -182,35 +166,25 @@ badge](https://gist.github.com/SteveAmor/8c333927fded2339da54ad4aaa765d7e)**
 
 ### Tilda Tools
 
-**<a href="TiLDA_MK4/tilda-tools" class="wikilink"
-title="tilda-tools">tilda-tools</a>** - Should now work on Windows,
-Linux and OSX
+[tilda-tools](tilda-tools.md) - Should now work on Windows, Linux and OSX
 
 ### OSX
 
 Mass storage now works on OSX
 
-**<a href="TiLDA_MK4/Introduction_to_badge_hacking" class="wikilink"
-title="Badge Hacking Workshop Documentation">Badge Hacking Workshop
-Documentation</a>**
+### Docs
 
 One of the main goals of TiLDA is to make hacking it as easy as
 possible. All you need to do so is a computer with USB and your badge.
 
-- **<a href="TiLDA_MK4/tilda-tools" class="wikilink"
-  title="tilda-tools">tilda-tools</a>** - the one-stop interface for all
+- [tilda-tools](tilda-tools.md) - the one-stop interface for all
   your badge needs
-- **<a href="TiLDA_MK4/Get_Started" class="wikilink"
-  title="Step-by-step">Step-by-step</a>** - to make it as easy as
+- [Step-by-step](Get_Started.md) - to make it as easy as
   possible to get going
-- **<a href="TiLDA_MK4/Run_Code" class="wikilink"
-  title="3 Ways to run code on your TiLDA">3 Ways to run code on your
-  TiLDA</a>**
-- **<a href="TiLDA_MK4/Badge_Store_Submissions" class="wikilink"
-  title="Badge Store Submissions">Badge Store Submissions</a>** - Share
+- [3 Ways to run code on your TiLDA](Run_Code.md)
+- [Badge Store Submissions](Badge_Store_Submissions.md) - Share
   your creations with others
-- **<a href="TiLDA_MK4/Code_Structure" class="wikilink"
-  title="Code Structure">Code Structure</a>** - How the python code is
+- [Code Structure](Code_Structure.md) - How the python code is
   structured
 
 The badge itself runs code written in the computer language
@@ -220,15 +194,14 @@ which is run by a bit of software called
 
 For more information about the functions available please have a look at
 the
-<a href="#Badge_API" class="wikilink" title="Badge API">Badge API</a>
-section of this page.
+[Badge API](API/index.md)
+section.
 
 In case you're more interested in what makes the hardware tick and your
 confident with C++ and microprocessors then you can work directly with
 the micropython code that runs TiLDA:
-<a href="TiLDA_MK4/build" class="wikilink"
-title="How to build the firmware from scratch">How to build the firmware
-from scratch</a>
+[How to build the firmware from scratch](Building_Firmware.md) How to build the firmware
+from scratch
 
 All code used is hosted on Github. Contributions and PR are very
 welcome!
@@ -239,8 +212,7 @@ welcome!
 
 ### Building Micropython Firmware
 
-<a href="TiLDA_MK4/BuildingFirmware" class="wikilink"
-title="Build Instructions">Build Instructions</a>
+[How to build the firmware](Building_Firmware.md)
 
 ### Some ideas
 
@@ -266,90 +238,30 @@ SerialTimeoutException: Write Timeout Fix:
 
 - If lets say you wanted to **force a firmware update to apply the patch
   for making phone calls** then just follow these steps.
-- \$ git clone <https://github.com/micropython/micropython.git>
-- \$ cd micropython/ports
-- \$ git clone <https://github.com/emfcamp/Mk4-micropython-board.git>
-- \$ cd Mk4-micropython-board
-- \$ ./inst_tools
-- \$ make
-- You may need additional packages depending on your distro, follow the
-  errors if encountered with inst_tools or make.
-- Put the badge in DFU mode (press and hold the centre button of the
-  joystick and press reset button, let go of joystick after a second)
-- \$ make flash-dfu
-- This will reflash the firmware, if it fails your board is either not
-  in dfu mode or you need additional packages (like python3-serial in
-  apt!)
 
-**Using the Grove Serial connector**
+```
+git clone <https://github.com/micropython/micropython.git>
+cd micropython/ports
+git clone <https://github.com/emfcamp/Mk4-micropython-board.git>
+cd Mk4-micropython-board
+./inst_tools
+make
+```
 
-The Badge Team thoughtfully chose to include a couple of
-Seeed Studio Grove system connectors to the 2018 badge. Looking at the
-rear of the badge, they are either side of the unpopulated 3.5mm jack
-footprint, top right.
+You may need additional packages depending on your distro, follow the errors if encountered with inst_tools or make.
 
-- On the left is the Grove I2C connector \<anyone using this?\>
-- On the right is the Grove UART connector
+Put the badge in DFU mode (press and hold the centre button of the joystick and press reset button, let go of joystick after a second)
 
-The Grove UART is helpfully labelled "UART4". To use it in Python, it is
-actually number 2!!!
+```
+make flash-dfu
+```
 
-Example:
+This will reflash the firmware, if it fails your board is either not in dfu mode or you need additional packages (like `python3-serial` in apt!)
 
-import machine
-
-u = machine.UART(2, 9600)
-
-g = u.readline()
-
-etc...
-
-can be used to communicate with the Seeed Studio GPS module. \[Seeed
-Studio: <http://wiki.seeedstudio.com/Grove-GPS/>\]
-
-## Badge API
-
-### Build-in
-
-- [documentation](http://docs.micropython.org/en/latest/pyboard/) -
-  General Micropython libarary
-- <a href="TiLDA_MK4/ugfx" class="wikilink" title="uGFX">uGFX</a> - The
-  TiLDA LCD colour screen
-- <a href="TiLDA_MK4/documentation/cc3100" class="wikilink"
-  title="CC3100">CC3100</a> - The wifi chip
-- <a href="TiLDA_MK4/rtc" class="wikilink" title="RTC">RTC</a> (real
-  time clock)
-- <a href="TiLDA_MK4/sensors" class="wikilink" title="Sensors">Sensors</a>
-- <a href="TiLDA_MK4/sim800" class="wikilink" title="SIM800">SIM800</a>
-  (GSM/Phone/Bluetooth)
-- <a href="TiLDA_MK4/modtilda" class="wikilink"
-  title="import tilda">import tilda</a> (our custom micropython module)
-- <a href="TiLDA_MK4/spi" class="wikilink" title="SPI">SPI</a> SPI
-- <a href="TiLDA_MK4/Neopix" class="wikilink" title="Neopix">Neopix</a>
-  WS2812B LEDs
-- please add
-
-### TiLDA Libraries
-
-On top of the build-in modules above we have also created a bunch of
-helpful libraries written in python. If you go through the bootstrap
-process or use the App Library you should always have a full set of
-those on your badge. If for some reason this isn't the case you can
-download our repository from <https://github.com/emfcamp/Mk4-Firmware>
-and copy the `lib` folder onto your badge.
-
-for now please have a look at the libraries themselves:
-<https://github.com/emfcamp/Mk4-Apps/tree/master/lib>
-
-(feel free to add additional ideas, and create links new wiki pages to
-on-going projects, perhaps someone will want to contribute)
-
-### Hardware
+## Badge hardware
 
 Full hardware files are on GitHub
 [2](https://github.com/emfcamp/Mk4-Hardware)
-
-## Badge hardware
 
 TiLDA comes with a long list of very useful hardware. Some might be
 obvious, but some are a bit hidden.
@@ -389,14 +301,14 @@ obvious, but some are a bit hidden.
 - [Conductive
   thread](https://learn.sparkfun.com/tutorials/sewing-with-conductive-thread)
   points and 0.1" header for power/UART/I2C/GPIO
-- [Defcon 26 Shitty Add-Ons
+- [Defcon 26 Shitty AddOns
   connector](https://hackaday.io/project/52950-defcon-26-shitty-add-ons)
 
 Hardware files are available on GitHub
 [3](https://github.com/emfcamp/Mk4-Hardware).
 
-![](Sensor_graphic_-_with_fixed_transparency-01.png "Sensor_graphic_-_with_fixed_transparency-01.png")
-![](Sensor_graphic_-_with_fixed_transparency-02.png "Sensor_graphic_-_with_fixed_transparency-02.png")
+![](../images/Sensor_graphic_-_with_fixed_transparency-01.png "Sensor_graphic_-_with_fixed_transparency-01.png")
+![](../images/Sensor_graphic_-_with_fixed_transparency-02.png "Sensor_graphic_-_with_fixed_transparency-02.png")
 
 <a href="Category:_Badges" class="wikilink"
 title="Category: Badges">Category: Badges</a>

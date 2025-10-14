@@ -22,7 +22,7 @@ badge](https://blog.emfcamp.org/2024/03/18/tildagon/)**
 ## EMF2022 - TiDAL
 
 - [Documentation mainpage](https://github.com/emfcamp/tidal-docs)
-- [Firmare Repository](https://github.com/emfcamp/TiDAL-Firmware)
+- [Firmware Repository](https://github.com/emfcamp/TiDAL-Firmware)
 - [Hardware Repository](https://github.com/emfcamp/TiDAL-Hardware)
 - [Flyer](https://usercontent.irccloud-cdn.com/file/tRv4Lyv4/badge+flyer.pdf)
 - [App store](https://2022.badge.emfcamp.org)
@@ -31,14 +31,14 @@ badge](https://blog.emfcamp.org/2024/03/18/tildagon/)**
 
 ![Mk4 Front with sponsors](images/TiLDA_Mk4_Front_with_sponsors.png "Mk4 Front with sponsors")
 
-[TiLDA Mkδ main page](TiLDA_MK4)
+[TiLDA Mkδ main page](TiLDA_MK4/index.md)
 [2018 badge announcement on our blog](http://blog.emfcamp.org/post/177423823788/tilda-mk4-the-emf-2018-badge)
 
 ## EMF2016 - TiLDA Mkπ
 
 ![Mk3 Front](images/TiLDA_MK3_front.jpg)
 
-[TiLDA MK3 main page](TiLDA_MK3)
+[TiLDA MK3 main page](TiLDA_MK3/index.md)
 
 [2016 badge announcement on our blog]
 (http://blog.emfcamp.org/post/144514906298/tilda-mkπ-the-hackable-conference-badge-that)
@@ -48,7 +48,7 @@ badge](https://blog.emfcamp.org/2024/03/18/tildagon/)**
 
 ![Mk2 Front](images/Tumblr_inline_n9znh3W5tC1rpuop0.jpg)
 
-The [TiLDA MKe project](TiLDA_MKe) is code named "ElectroMagnetic Boogaloo"
+The [TiLDA MKe project](TiLDA_MKe/index.md) is code named "ElectroMagnetic Boogaloo"
 
 The MKe is an entirely new design, based on the Arduino Due. It brings
 an LCD display, Accelerometer and Gyro, along with a long-range wireless
@@ -83,8 +83,9 @@ all!
 
 ![](images/Emf2012_badge_pcb.png "Emf2012_badge_pcb.png")
 
-[TiLDA](http://wiki-archive.emfcamp.org/2012/articles/b/a/d/Badge.html)
+[TiLDA](TiLDA.md)
 The first EMF camp badge, base around the Arduino Leonardo, with on board
 IR, NRF24 Radio and RGB LED's.
+
 [Revealing TiLDA, our camp
 badge!](http://blog.emfcamp.org/post/28558155390/revealing-tilda-our-camp-badge)

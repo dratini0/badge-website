@@ -20,7 +20,7 @@ App names need to be unique (the folder structure enforces that). App
 folders can contain multiple files (python and non python), but at a
 minimum "main.py" with the correct headers is required.
 
-Plesae verify that your apps folder structure is correct by running
+Please verify that your apps folder structure is correct by running
 "./tilda_tools validate" (this works without a badge) before submitting
 it to the badge app store as the validations is also run by Travis to
 check pull requests.
@@ -29,11 +29,13 @@ check pull requests.
 
 main.py headers:
 
-    ___title___         = "<your_app_name>"
-    ___license___      = "MIT"
-    ___dependencies___ = ["wifi", "http", "ugfx_helper", "sleep"]
-    ___categories___   = ["<see below>"]
-    ___bootstrapped___ = True # Whether or not apps get downloaded on first install. Defaults to "False", mostly likely you won't have to use this at all.
+```python
+___title___         = "<your_app_name>"
+___license___      = "MIT"
+___dependencies___ = ["wifi", "http", "ugfx_helper", "sleep"]
+___categories___   = ["<see below>"]
+___bootstrapped___ = True # Whether or not apps get downloaded on first install. Defaults to "False", mostly likely you won't have to use this at all.
+```
 
 Please use one of these categories:
 

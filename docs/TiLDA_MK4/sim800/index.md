@@ -133,7 +133,7 @@ The contents of the message is returned as a string.
 
 - number: The number to send the SMS message to.
 - message: The message to send as a string. This must be less than 160
-  8-bit charicters in length.
+  8-bit characters in length.
 
 ### Delete an SMS Message
 
@@ -505,7 +505,7 @@ Returns the gain if changed or not.
 
 - freq: The frequency to play in Hz.
 - duration: The duration of the tone in milliseconds.
-- async: If True (dafault) it will return instantly and the audio will
+- async: If True (default) it will return instantly and the audio will
   continue to play for the duration.
 
 ### Record Audio
@@ -651,7 +651,7 @@ Returns the Cell ID of the currently connected cell tower.
 
 - neighbour: Include full neighbouring cell information if True.
 
-Returns the engineering information (documented in the docuemtns listed
+Returns the engineering information (documented in the documents listed
 in the advanced section) for the current cell and 6 neighbouring cells.
 
 ### Network selection

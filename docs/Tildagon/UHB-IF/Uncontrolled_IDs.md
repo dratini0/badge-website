@@ -13,7 +13,7 @@ add in numeric order to make searching easier.
 | 0x0000 | Example1 | This is an example entry | H.Acker | [1](https://github.com/emfcamp/badge-2024-addons) |
 | 0x???? | Template | This is a template entry - please edit | YourNickHere | [2](https://github.com/emfcamp/badge-2024-addons) |
 | 0x4247 | GCHQ.NET Quest Marker | Quest marker for Great Camp Hexpansion Quest | GCHQ.NET | [3](https://github.com/gchq-net/hexpansion_hardware) |
-| 0x8426 | "Legacy" connector adapter | Shitty add-ons? TiDAL projects? I2C sensors? Connect them easy. | dratini0 | [4](https://github.com/dratini0/legacy-adapter-hexpansion) |
+| 0x8426 | "Legacy" connector adapter | Shitty addons? TiDAL projects? I2C sensors? Connect them easy. | dratini0 | [4](https://github.com/dratini0/legacy-adapter-hexpansion) |
 | 0x8427 | HUB75 hexpansion | I think the Tildagon can drive an LED wall panel. | dratini0 | [5](https://github.com/dratini0/hub75-hexpansion) |
 | 0x9009 | Googly Eye | Googly Eye Hexpansion | thinkl33t | [6](https://github.com/emfcamp/badge-2024-addons/thinkl33t/) |
 

@@ -41,7 +41,7 @@ pin = pyb.Pin("LED_TORCH")
 pin.high()
 ```
 
-Of course, thats a bit of a pain to do every time we want the LED on, so
+Of course, that would be a bit of a pain to do every time we want the LED on, so
 let's make an app!
 
 **The App**
@@ -64,7 +64,7 @@ done in a header section at the top of the file
 # Built-in: no 
 ```
 
-You could save and run your app now, but it wont actually do anything
+You could save and run your app now, but it won't actually do anything
 yet. Lets add the code:
 
 ```python

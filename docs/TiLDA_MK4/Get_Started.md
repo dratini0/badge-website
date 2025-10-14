@@ -4,9 +4,8 @@ Hacking your TiLDA Mk4 badge is easy. We've written it down step by
 step.
 
 If something goes wrong, the badge can be
-<a href="TiLDA_MK4/reset" class="wikilink" title="reset">reset</a> to
-its out-of-the-box state, so do not be concerned about breaking
-anything.
+[reset](Factory_Reset.md) to its out-of-the-box state, so do not be concerned about
+breaking anything.
 
 ## 1. Connect to your computer
 
@@ -50,7 +49,7 @@ don't worry about it.
 
 ## 3. Your first line of Micropython
 
-- In your terminal (next to the \>\>\>) type `print(1 + 1)` followed by
+- In your terminal (next to the `>>>`) type `print(1 + 1)` followed by
   Enter
 - You should see `2` printed on the screen. Congratulations, you've just
   written your first line of micropython code!
@@ -109,16 +108,17 @@ make things a little easier.
 You need to clone our Mk4-Apps repository:
 <https://github.com/emfcamp/Mk4-Apps>
 
-You might find some tricks on how to do this here:
-<https://badge.emfcamp.org/wiki/TiLDA_MK4/Badge_Store_Submissions#Submitting_your_badge_app_to_the_official_badge_store>
+You might find some tricks on how to do this [here](Badge_Store_Submissions.md)
 
-There's a python script calle "tilda_tools" in the repository. You can
+There's a python script called "tilda_tools" in the repository. You can
 use it to do all sorts of stuff that is a bit complicated to do with the
 USB mass storage.
 
 To test it open "adhoc.py" and add the following line at the bottom:
 
-    ugfx.text(5, 5, "Hello World!", ugfx.RED)
+```python
+ugfx.text(5, 5, "Hello World!", ugfx.RED)
+```
 
 and then run "./tilda_tools run adhoc.py" (or "python tilda_tools run
 adhoc.py" on Windows)
@@ -140,8 +140,7 @@ Let's create an app you can put on your badge.
   find one by searching for "edit".
 - Copy the following and save it as `main.py` in your folder:
 
-<!-- -->
-
+```python
     """My first app"""
 
     ___title___         = "My app"
@@ -166,6 +165,7 @@ Let's create an app you can put on your badge.
 
     ugfx.clear()
     restart_to_default()
+```
 
 Now you can run "./tilda_tools app my_app" - Wait a few seconds and you
 should see your app working on the screen.
@@ -178,5 +178,5 @@ it your default app.
 
 Now that you have your own smiley app, why not share it with others?
 
-See <https://badge.emfcamp.org/wiki/TiLDA_MK4/Badge_Store_Submissions>
+See [Badge store submissions](Badge_Store_Submissions.md)
 for more information

@@ -55,9 +55,10 @@ Containers can be used to group widgets together. They can also perform
 primitive drawing functions. When drawing widgets or primitives, the
 coordinates are relative to the top left corner of the container.
 
-Containers can be shown or hidden, and all the widgets will be redrawn.
-Containers can also be placed on top of other widgets. When the top
-container is hidden, the widgets below will be redrawn.
+Containers can be shown or hidden, and all the widgets will be redrawn
+(primitives are not widgets and are not redrawn). Containers can also be
+placed on top of other widgets. When the top container is hidden, the
+widgets below will be redrawn.
 
 Upon creation a style can be passed to a container, which will then be
 used by default by widgets created as part of that container. If no
@@ -66,15 +67,21 @@ style is specified at creation, the current default style will be used.
 The following example shows how to create a container, add an object and
 show it.
 
-    c = ugfx.Container(100,100,200,100)
-    b = ugfx.Button(10, 10, 40, 30, "OK", c)
-    c.show()            # the container will not be shown until this point
+```python
+c = ugfx.Container(100,100,200,100)
+b = ugfx.Button(10, 10, 40, 30, "OK", parent=c)
+c.show()            # the container will not be shown until this point
+c.fill_circle(5,5,5,ugfx.RED) #draws a small red circle. Note this has to be done after .show()
+```
 
 ### Primitives
 
 All primitives can be drawn anywhere on the screen with, for example
 `ugfx.circle(..)`, or anywhere within a container, with
 `c=ugfx.Container(30,30,100,100); c.circle(..)`
+
+Note: The container must be shown *before* you can draw primitives in
+it. When hiding the container, all drawings are lost!
 
 #### Clear
 
@@ -95,47 +102,52 @@ eg. *ugfx.thickline(0,0,100,170,ugfx.YELLOW,7,0)*
 
 #### Circle
 
-`.circle(x, y, diameter, colour)`
+```python
+.circle(x, y, radius, colour)
+.fill_circle(x, y, radius, colour)
+```
 
-`.fill_circle(x, y, diameter, colour)`
-
-Draws a circle at *x,y* of <diameter> using *colour*, either with a 1
+Draws a circle at *x,y* of <radius> using *colour*, either with a 1
 pixel border or filling the area.
 
 eg. *ugfx.circle(180,150,40,ugfx.RED)*
 
 #### Arc
 
-`.arc(x, y, r, angle1, angle2, colour)`
-
-`.fill_arc(x, y, r, angle1, angle2, colour)`
+```python
+.arc(x, y, r, angle1, angle2, colour)
+.fill_arc(x, y, r, angle1, angle2, colour)
+```
 
 Similar to the circle functions, however two angle parameters specify
 between which two angles drawing occurs
 
 #### Ellipse
 
-`.ellipse(x, y, a, b, colour)`
-
-`.fill_ellipse(x, y, a, b, colour)`
+```python
+.ellipse(x, y, a, b, colour)
+.fill_ellipse(x, y, a, b, colour)
+```
 
 Draws an ellipse at *x,y* of *a* width and *b* height using *colour*,
 either with a 1 pixel border or filling the area.
 
 #### Rectangles
 
-`.box(1, y, a, b, colour)`
-
-`.area(x, y, a, b, colour)`
+```python
+.box(1, y, a, b, colour)
+.area(x, y, a, b, colour)
+```
 
 Draws a rectangle or filled rectangle at *x,y* of *a* width and *b*
 height using *colour*.
 
 #### Polygon
 
-`.polygon(x, y, array, colour)`
-
-`.fill_polygon(x, y, array, colour)`
+```python
+.polygon(x, y, array, colour)
+.fill_polygon(x, y, array, colour)
+```
 
 Draws or fills a polygon starting at *x,y* using *colour*. *Array* is an
 array of coordinates that specifies the corners.
@@ -144,19 +156,22 @@ eg. *ugfx.polygon(0,0, \[ \[0,20\],\[20,20\],\[20,0\]\], ugfx.RED)*
 
 #### Text
 
-`.text(x, y, text, colour)`
+```python
+.text(x, y, text, colour)
+```
 
 Draws a text string *text* at *x,y* in *colour*. Note that a
 ugfx.text(..) call will take the default font, while container.text(..)
 will take the containers font.
 
-eg. *ugfx.text(40,40,"My name is...",ugfx.BLUE)*
+eg. `ugfx.text(40,40,"My name is...",ugfx.BLUE)`
 
 #### Other
 
-`.width()`
-
-`.height()`
+```python
+.width()
+.height()
+```
 
 Gets the height or width of the screen *ugfx.width()* or container
 object *c.width()*
@@ -175,16 +190,22 @@ state.
 
 #### Common Widget methods
 
-`.text([text])`
+```python
+.text([text])
+```
 
 Gets or sets the text displayed by the widget.
 
-`.visible([show])`
+```python
+.visible([show])
+```
 
 Gets or sets the visibility of the badge. *b.visible(0)* will hide, and
 *b.visible(1)* will show.
 
-`.attach_input(button, function)`
+```python
+.attach_input(button, function)
+```
 
 Attaches a physical button to a widget, so that the user can cause the
 widget to redraw, for example to scroll or become depressed.
@@ -198,25 +219,34 @@ example, the list has three different functions: scroll up, scroll down,
 and select. Note that some widgets by default attach the joystick to the
 relevant functions.
 
-`.detach_input(function)`
+```python
+.detach_input(function)
+```
 
 Detaches an input. See above for more details.
 
-`.destroy()`
+```python
+.destroy()
+```
 
-Frees up all the resources assoicated with the object. While the
+Frees up all the resources associated with the object. While the
 micropython garbage collector will clear any old objects, the graphics
 library also has its own memory area, which can become full if objects
 are not destroyed after they are needed.
 
-`.set_focus()`
+```python
+.set_focus()
+```
 
 Gives focus to the widget instance. Normally this will draw a box around
 the widget, the colour is specified by the style.
 
 #### Button
 
-`b=ugfx.Button(x, y, w, h, text, *, parent=None, trigger=None, shape=ugfx.Button.RECT, style=None)`
+```python
+b = ugfx.Button(x, y, w, h, text, *, parent=None, trigger=None, shape=ugfx.Button.RECT, style=None)
+```
+
 (note: parameters after '\*' are optional)
 
 Draws a button at *x,y* having width *a* and height *b*. The option
@@ -228,7 +258,9 @@ be redrawn. The shape options are *ugfx.Button.RECT*,
 
 #### Textbox
 
-`ugfx.Textbox(x, y, w, h, *, text=None, parent=None, maxlen=255})`
+```python
+ugfx.Textbox(x, y, w, h, *, text=None, parent=None, maxlen=255})
+```
 
 Draws a text edit-box which can take input from the on-screen keyboard.
 Will automatically accept key-presses from the keyboard, which will edit
@@ -237,9 +269,10 @@ receive the key-presses.
 
 #### Checkbox
 
-`.Checkbox((x, y, w, h, text=None, parent=None, trigger=None, style=None)`
-
-`.checked()`
+```python
+.Checkbox((x, y, w, h, text=None, parent=None, trigger=None, style=None)
+.checked()
+```
 
 Get or set the checked state
 
@@ -318,9 +351,11 @@ See the [BARMS logger
 app](https://github.com/emfcamp/Mk3-Firmware/blob/master/apps/logger/main.py)
 for an example
 
-#### ImageBox
+#### Imagebox
 
-`.ImageBox(x, y, w, h, filename, *, cache=0, parent=None, style=None)`
+`.Imagebox(x, y, w, h, filename, *, cache=0, parent=None, style=None)`
+
+This displays an image box. This will automatically animate a passed gif
 
 #### Keyboard
 
@@ -359,7 +394,7 @@ the screen)
 
 This large memory as part of the screen means it can be driven by a
 microcontroller which may have a considerably smaller memory. The
-microcontroller therefore only needs to update the memory when it whats
+microcontroller therefore only needs to update the memory when it wants
 the content to change.
 
 Consider the scenario where the microcontroller wants to set the screen
@@ -374,7 +409,7 @@ starts reading the old colour in the bottom half of the memory.
 To avoid tearing the 'read line-pointer' should not cross the region the
 microcontroller is updating. Since the microcontroller writes to the
 screen slightly slower than the LCD reads it, providing the
-microntroller starts writes to the top of the memory just after the LCD
+microcontroller starts writes to the top of the memory just after the LCD
 starts reading from the top, the read and write pointers will not
 overlap, and tearing will not occur. To sync the microcontroller with
 the LCD 'read line-pointer,' there is a vsync/tear output (connected to
