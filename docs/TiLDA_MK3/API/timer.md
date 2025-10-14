@@ -11,34 +11,38 @@ True: pass".
 
 ## Function callbacks
 
-    flag = 0
+```python
+flag = 0
 
-    #note, this callback needs to take one parameter, which is what timer is calling it
-    def tim_callback(t):
-        global flag
-        flag = 1
+#note, this callback needs to take one parameter, which is what timer is calling it
+def tim_callback(t):
+    global flag
+    flag = 1
 
-    timer = pyb.Timer(3)
-    timer.init(freq=1)
-    timer.callback(tim_callback)
+timer = pyb.Timer(3)
+timer.init(freq=1)
+timer.callback(tim_callback)
 
-    ....
+....
 
-    timer.deinit()
+timer.deinit()
+```
 
 or, using lambdas
 
-    flag = 0
+```python
+flag = 0
 
-    #the use of lambda avoids needing the function to take an argument
-    def tim_callback():
-        global flag
-        flag = 1
+#the use of lambda avoids needing the function to take an argument
+def tim_callback():
+    global flag
+    flag = 1
 
-    timer = pyb.Timer(3)
-    timer.init(freq=1)
-    timer.callback(lambda t: tim_callback())
+timer = pyb.Timer(3)
+timer.init(freq=1)
+timer.callback(lambda t: tim_callback())
 
-    ....
+....
 
-    timer.deinit()
+timer.deinit()
+```
