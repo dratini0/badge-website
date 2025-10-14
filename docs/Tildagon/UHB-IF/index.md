@@ -15,19 +15,17 @@ and present it in person to the Scottish Consulate during their posted
 hours of operation. Some copies of REQ1 might be available at the badge
 team and/or Scottish Consulate. For further information about how the
 Scottish Consulate handles procedures can be found in
-\[<https://scottishconsulate.org/right_link>\| their wiki\].
+[their wiki](https://scottishconsulate.org/right_link).
 
 Organizations wishing to use the legacy REQ-9 method of application
 should contact the authorized representative for further instructions.
 
-<a href="UHB-IF/Issued_IDs" class="wikilink"
-title="UHB-IF/Issued IDs">UHB-IF/Issued IDs</a>
+[Officially Issued IDs](Issued_IDs.md)
 
 In defiance of the UHB-IF, rebel hackers have homesteaded on some vendor
 IDs. They are linked below:
 
-<a href="UHB-IF/Uncontrolled_IDs" class="wikilink"
-title="UHB-IF/Uncontrolled IDs">UHB-IF/Uncontrolled IDs</a>
+[Uncontrolled IDs](Uncontrolled_IDs.md)
 
 The UHB-IF does not approve of unbureaucratic mechanisms like this, but
 is powerless to do anything about them.

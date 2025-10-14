@@ -1,8 +1,9 @@
-![](/images/800px-SiNE_Front_Angle.JPG "SiNE Front Angle")
+**S**iNE: **I**nvestigating the **N**eighbourhood of **E**MW
+
+![](images/800px-SiNE_Front_Angle.jpeg "SiNE Front Angle")
 
 ## About SiNE
 
-SiNE: Investigating the Neighbourhood of EMW
 Each attendee of Electromagnetic Wave receives a SiNE badge which has
 two purposes; firstly it allows you to take part in a treasure hunt
 based around the boat. By solving the clues you will be directed to an
@@ -32,10 +33,7 @@ preserved even if you remove the power
 
 #### Clue List
 
-Now EMWave has past here is the clue list: (Will add answers soon
---<a href="User:Dpslwk" class="wikilink" title="Dpslwk">Dpslwk</a>
-(<a href="User_talk:Dpslwk" class="wikilink" title="talk">talk</a>)
-14:21, 6 May 2013 (UTC))
+Now EMWave has passed here is the clue list:
 
 - A: I can't believe it's not butter!
 - B: Bond would be comfortable here and he has a licence.
@@ -60,14 +58,16 @@ Now EMWave has past here is the clue list: (Will add answers soon
 
 ### Locator ID
 
-![](800px-SiNE_Front_Buttons.jpeg "800px-SiNE_Front_Buttons.jpeg") Each
+<!-- BC: AFAICT these images are *gone* unless we have a backup of the 2012 wiki
+![](../images/800px-SiNE_Front_Buttons.jpeg "800px-SiNE_Front_Buttons.jpeg") -->
+Each
 badge is programmed with a unique ID, that is transmitted about 5 times
 a second. There will be Raspberry Pi's doted around the ship, collecting
 data.
 EMF will not know your badge ID, as there are handed out at random.
 A badge's ID is shown on the LED using binary encoding. This is done at
 power up, or by pressing and holding the "ID" button
-If you **do not** wish to have your badge trasnmitting an ID you can
+If you **do not** wish to have your badge transmitting an ID you can
 clear it by holding the "Erase" button for about 5 seconds.
 
 The badge ID is 9 bit's long, these are displayed across the A-I LED's,
@@ -78,14 +78,11 @@ Example if LED's A D E and H are lit then we have 010011001 in binary or
 Unfortunately due to a lack of time the Raspberry Pi's were never setup,
 as so no data was collected.
 
-<div style="clear: both">
-
-</div>
-
 ## Sponsors
 
-![](800px-SiNE_Back_Angle.JPG "800px-SiNE_Back_Angle.JPG") SiNE was only
-possible thanks to our sponsors:
+<!-- BC: AFAICT these images are *gone* unless we have a backup of the 2012 wiki
+![](../images/800px-SiNE_Back_Angle.JPG "800px-SiNE_Back_Angle.JPG") -->
+SiNE was only possible thanks to our sponsors:
 
 - [Twilio](http://www.twilio.com) A Cloud communications company
   sponsored the parts need to make badges.
@@ -99,7 +96,9 @@ possible thanks to our sponsors:
 
 ### DevBoards
 
-![](DevBoards.JPG "DevBoards.JPG") Before designing the final SiNE badge
+<!-- BC: AFAICT these images are *gone* unless we have a backup of the 2012 wiki
+![](../images/DevBoards.JPG "DevBoards.JPG") -->
+Before designing the final SiNE badge
 we built three development boards, not bothered about the looks, they
 were built to test the hardware and wiring between the parts.
 Once it was confirmed that the parts worked together they were passed
@@ -108,19 +107,16 @@ scavenger hunt and location tracking.
 Using these development boards meant the software was ready to go around
 the same time as the final badges were produced.
 
-<div style="clear: both">
-
-</div>
-
 ## Badge Hacking
 
-![](800px-SiNE_Schematic.png "800px-SiNE_Schematic.png") We actively
-encourage users to hack there badge better and hope the information
+<!-- BC: AFAICT these images are *gone* unless we have a backup of the 2012 wiki
+![](../images/800px-SiNE_Schematic.png "800px-SiNE_Schematic.png") -->
+We actively encourage users to hack their badge better and hope the information
 provided below will help
 
 ### Flashing and Fuses
 
-We use avrdude and an ISP programer to flash the ATTiny44A Example
+We use avrdude and an ISP programmer to flash the ATTiny44A Example
 command lines can be found in the Makefile in the SiNE-Firmware github
 
 avrdude part flag (-p) is t44
@@ -148,6 +144,3 @@ The following parts were used: (data-sheet links to come)
 
 - [PCB](https://github.com/EMF-TiLDA/SiNE-PCB)
 - [Firmware](https://github.com/EMF-TiLDA/SiNE-Firmware)
-
-<a href="Category:Badges" class="wikilink"
-title="Category:Badges">Category:Badges</a>

@@ -1,3 +1,6 @@
+This was our original list of ideas and plans for the 2016 badge and is preserved
+here for historical interest
+
 ## Software
 
 - Interpreter for high level functionality

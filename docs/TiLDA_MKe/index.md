@@ -1,5 +1,5 @@
-![](/images/IMG_0474.jpg "IMG_0474.jpg")
-![](/images/Badge_Front.png "Badge_Front.png")
+![](../images/IMG_0474.jpg "IMG_0474.jpg")
+![](../images/Badge_Front.png "Badge_Front.png")
 
 [Why MKe?](http://en.wikipedia.org/wiki/E_(mathematical_constant))
 
@@ -61,7 +61,7 @@ do!
 
 Most of the interesting things are on the back of the badge. They're
 clearly marked in white. [This diagram of the
-back](images/Badge_Back.png) should
+back](../images/Badge_Back.png) should
 allow you to locate them. Some of the following require extra parts to
 be added to your badge.
 
@@ -95,7 +95,7 @@ We made sure that the badge has a few features to play with once the
 event is over. More will be added over time as attendees submit changes
 to us.
 
-![](/images/Badge_Back.png "Badge Back")
+![](../images/Badge_Back.png "Badge Back")
 
 - Torch mode - Press the light button next to the screen. It will only
   light up fully if it's hung upside down to avoid blinding
@@ -241,7 +241,7 @@ review and merge the good ones so others can use them.
 
 ## Making the badge Arduino shield compatible
 
-![](Sheild_Headers.JPG "Shield Header Pinout")
+![](../images/Sheild_Headers.jpeg "Shield Header Pinout")
 
 To make the badge Arduino shield compatible
 you'll need to solder simple strips of header pins onto the back of the

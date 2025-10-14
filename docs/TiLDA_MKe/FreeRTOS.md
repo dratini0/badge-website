@@ -76,29 +76,31 @@ the EMF 2014 sketch in the Arduino IDE, select the Tilda v0.333 (RTOS)
 programmer, and find the new serial port. The IDE console should show
 something like this:
 
-`Sketch uses 118,748 bytes (22%) of program storage space. Maximum is 524,288 bytes.`
-`Erase flash`
-`Write 127668 bytes to flash`
+```
+Sketch uses 118,748 bytes (22%) of program storage space. Maximum is 524,288 bytes.
+Erase flash
+Write 127668 bytes to flash
 
-`[                              ] 0% (0/499 pages)`
-`[                              ] 2% (10/499 pages)`
-`[=                             ] 4% (20/499 pages)`
-`[=                             ] 6% (30/499 pages)`
-`...`
-`[============================= ] 98% (490/499 pages)`
-`[==============================] 100% (499/499 pages)`
-`Verify 127668 bytes of flash`
+[                              ] 0% (0/499 pages)
+[                              ] 2% (10/499 pages)
+[=                             ] 4% (20/499 pages)
+[=                             ] 6% (30/499 pages)
+...
+[============================= ] 98% (490/499 pages)
+[==============================] 100% (499/499 pages)
+Verify 127668 bytes of flash
 
-`[                              ] 0% (0/499 pages)`
-`[                              ] 2% (10/499 pages)`
-`[=                             ] 4% (20/499 pages)`
-`[=                             ] 6% (30/499 pages)`
-`...`
-`[============================= ] 98% (490/499 pages)`
-`[==============================] 100% (499/499 pages)`
-`Verify successful`
-`Set boot flash true`
-`CPU reset.`
+[                              ] 0% (0/499 pages)
+[                              ] 2% (10/499 pages)
+[=                             ] 4% (20/499 pages)
+[=                             ] 6% (30/499 pages)
+...
+[============================= ] 98% (490/499 pages)
+[==============================] 100% (499/499 pages)
+Verify successful
+Set boot flash true
+CPU reset.
+```
 
 # Useful Hacks & Non-Programming Information
 
@@ -118,97 +120,90 @@ RaspberryPi and two Ciseco radios.
 - A similar script in Perl to create TiLDA MKe fullscreen bitmaps from
   XBM: -
 
-<div style ="height:200px;overflow-x:hidden;overflow-y:auto;border: 4px solid orange;">
+```perl
+#!perl -w
+use strict;
+# Little script to convert a regular XBM to TiLDA MKe bitmap
+# only tested with fullscreen bitmaps!
+# Hot file handle magic...
+select((select(STDERR), $| = 1)[0]);
+select((select(STDOUT), $| = 1)[0]);
+sub t(@);
+sub d($);
+sub chug($);
+my $f = shift;
+#~ $f = 'blankish.xbm' if not $f;
+if(not defined $f or not $f =~ /^(.*)\.xbm$/i){
+    die "Usage: gimme an XBM file dude!\n";
+}
+my $name = $1;
+t "Reading file '$f'...";
+my $data = chug($f);
+t "OK";
+my @lines = split /^/, $data;
+@lines = grep{chomp; s/^\s+//; s/\s+$//; length;} @lines;
+#~ t d \@lines;
+my($width, $height) = (0,0);
+my @head = @lines[0..5];
+foreach(@head){
+    if(/_width\s+(\d+)/){$width = $1;}
+    if(/_height\s+(\d+)/){$height = $1;}
+}
+t "width x height = $width x $height";
+my @k;
+foreach(@lines){ push @k, split /,/; }
+@k = grep { s/^.*(0x[0-9A-Fa-f]{1,2}).*$/$1/o; /(0x[0-9A-Fa-f]{1,2})/o } @k;
+#~ t d \@k;
+my $bc = scalar(@k);
+t "Pulled out $bc hex bytes";
+if($bc != $width * $height / 8) {
+    die "byte count $bc does not match that expected for w x h";
+}
+t "OK - reorder bytes for MKe bitmap";
+my $wb = int($width/8) + (($width & 0x07) ? 1: 0);
+t "width in whole bytes for $width pixels = $wb";
+my @mke;
+for(my $col = 0; $col < $wb; $col++){
+    for(my $row = $height - 1; $row >= 0; $row--){
+        my $idx = ($row * $wb) + $col;
+        my $val = $k[$idx];
+        #~ t "Column $col + Row $row = idx $idx = $val";
+        push @mke, $val;
+    }
+}
+my $out = "static const uint8_t ".uc($name)."_BM[] = {\n"
+    ."    $width, // width\n"
+    ."    $height , // height\n";
+#~ $out .= join(", ", @mke);
+while(scalar @mke){
+    $out .= join(", ", splice(@mke, 0, 16)).",\n";
+}
+$out .= "};\n";
+# meh, just print it out
+t $out;
 
-**xbm2mke.pl by <a href="User:Msemtd" class="wikilink"
-title="User:Msemtd">User:Msemtd</a>**
-
-``
-`#!perl -w`
-`use strict;`
-`# Little script to convert a regular XBM to TiLDA MKe bitmap`
-`# only tested with fullscreen bitmaps!`
-`# Hot file handle magic...`
-`select((select(STDERR), $| = 1)[0]);`
-`select((select(STDOUT), $| = 1)[0]);`
-`sub t(@);`
-`sub d($);`
-`sub chug($);`
-`my $f = shift;`
-`#~ $f = 'blankish.xbm' if not $f;`
-`if(not defined $f or not $f =~ /^(.*)\.xbm$/i){`
-`    die "Usage: gimme an XBM file dude!\n";`
-`}`
-`my $name = $1;`
-`t "Reading file '$f'...";`
-`my $data = chug($f);`
-`t "OK";`
-`my @lines = split /^/, $data;`
-`@lines = grep{chomp; s/^\s+//; s/\s+$//; length;} @lines;`
-`#~ t d \@lines;`
-`my($width, $height) = (0,0);`
-`my @head = @lines[0..5];`
-`foreach(@head){`
-`    if(/_width\s+(\d+)/){$width = $1;}`
-`    if(/_height\s+(\d+)/){$height = $1;}`
-`}`
-`t "width x height = $width x $height";`
-`my @k;`
-`foreach(@lines){ push @k, split /,/; }`
-`@k = grep { s/^.*(0x[0-9A-Fa-f]{1,2}).*$/$1/o; /(0x[0-9A-Fa-f]{1,2})/o } @k;`
-`#~ t d \@k;`
-`my $bc = scalar(@k);`
-`t "Pulled out $bc hex bytes";`
-`if($bc != $width * $height / 8) {`
-`    die "byte count $bc does not match that expected for w x h";`
-`}`
-`t "OK - reorder bytes for MKe bitmap";`
-`my $wb = int($width/8) + (($width & 0x07) ? 1: 0);`
-`t "width in whole bytes for $width pixels = $wb";`
-`my @mke;`
-`for(my $col = 0; $col < $wb; $col++){`
-`    for(my $row = $height - 1; $row >= 0; $row--){`
-`        my $idx = ($row * $wb) + $col;`
-`        my $val = $k[$idx];`
-`        #~ t "Column $col + Row $row = idx $idx = $val";`
-`        push @mke, $val;`
-`    }`
-`}`
-`my $out = "static const uint8_t ".uc($name)."_BM[] = {\n"`
-`    ."    $width, // width\n"`
-`    ."    $height , // height\n";`
-`#~ $out .= join(", ", @mke);`
-`while(scalar @mke){`
-`    $out .= join(", ", splice(@mke, 0, 16)).",\n";`
-`}`
-`$out .= "};\n";`
-`# meh, just print it out`
-`t $out;`
-``
-`sub t(@) {`
-`    foreach (@_) {`
-`       print STDOUT "$_\n";`
-`    }`
-`}`
-`sub d($) {`
-`    require Data::Dumper;`
-`    my $s = $_[0];`
-`    my $d = Data::Dumper::Dumper($s);`
-`    $d =~ s/^\$VAR1 =\s*//;`
-`    $d =~ s/;$//;`
-`    chomp $d;`
-`    return $d;`
-`}`
-`sub chug($) {`
-`  my $filename = shift;`
-`  local *F;`
-``   open F, "< $filename" or die "Couldn't open `$filename': $!"; ``
-`  local $/ = undef;`
-`  return <F>;`
-`}  # F automatically closed`
-``
-
-</div>
+sub t(@) {
+    foreach (@_) {
+       print STDOUT "$_\n";
+    }
+}
+sub d($) {
+    require Data::Dumper;
+    my $s = $_[0];
+    my $d = Data::Dumper::Dumper($s);
+    $d =~ s/^\$VAR1 =\s*//;
+    $d =~ s/;$//;
+    chomp $d;
+    return $d;
+}
+sub chug($) {
+  my $filename = shift;
+  local *F;
+   open F, "< $filename" or die "Couldn't open $filename': $!";
+  local $/ = undef;
+  return <F>;
+}  # F automatically closed
+```
 
 # Firmware Documentation
 

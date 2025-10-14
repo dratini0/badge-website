@@ -4,10 +4,9 @@ anyone can play with it.
 
 ## Contacting the badge team
 
-- email: **badge@emfcamp.org**
+- matrix: [\#badge:emfcamp.org](https://matrix.to/#/#badge:emfcamp.org)
 - irc: **irc.libera.chat \#emfcamp-badge**
-- matrix:
-  '''[\#badge:emfcamp.org](https://matrix.to/#/#badge:emfcamp.org)
+- email: **badge@emfcamp.org**
 
 ## EMF2024+ - Tildagon
 
@@ -30,14 +29,14 @@ badge](https://blog.emfcamp.org/2024/03/18/tildagon/)**
 
 ## EMF2018 - TiLDA Mkδ
 
-![Mk4 Front with sponsors](TiLDA_Mk4_Front_with_sponsors.png "Mk4 Front with sponsors")
+![Mk4 Front with sponsors](images/TiLDA_Mk4_Front_with_sponsors.png "Mk4 Front with sponsors")
 
 [TiLDA Mkδ main page](TiLDA_MK4)
 [2018 badge announcement on our blog](http://blog.emfcamp.org/post/177423823788/tilda-mk4-the-emf-2018-badge)
 
 ## EMF2016 - TiLDA Mkπ
 
-![Mk3 Front](TiLDA_MK3_front.jpg)
+![Mk3 Front](images/TiLDA_MK3_front.jpg)
 
 [TiLDA MK3 main page](TiLDA_MK3)
 
@@ -47,7 +46,7 @@ badge](https://blog.emfcamp.org/2024/03/18/tildagon/)**
 
 ## EMF2014 - TiLDA MKe
 
-![Mk2 Front](Tumblr_inline_n9znh3W5tC1rpuop0.jpg)
+![Mk2 Front](images/Tumblr_inline_n9znh3W5tC1rpuop0.jpg)
 
 The [TiLDA MKe project](TiLDA_MKe) is code named "ElectroMagnetic Boogaloo"
 
@@ -66,10 +65,10 @@ firmware are still being produced :)
 
 ## EMW2013 - SiNE
 
-![SiNE Front](800px-SiNE_Front_Angle.JPG "800px-SiNE_Front_Angle.JPG")
+![SiNE Front](images/800px-SiNE_Front_Angle.jpeg "SiNE Front Angle")
 
 
-[SiNE: Investigating the Neighbourhood of EMW](SiNE)
+[SiNE: Investigating the Neighbourhood of EMW](SiNE.md)
 
 Each attendee of Electromagnetic Wave received a SiNE badge, allowing
 them to take part in a treasure hunt based around the boat. By solving
@@ -82,10 +81,10 @@ all!
 
 ## EMF2012 - TiLDA MK1
 
-![](Emf2012_badge_pcb.png "Emf2012_badge_pcb.png")
+![](images/Emf2012_badge_pcb.png "Emf2012_badge_pcb.png")
 
 [TiLDA](http://wiki-archive.emfcamp.org/2012/articles/b/a/d/Badge.html)
-The first EMF camp badge, base around the Arduino Leonard, with on board
+The first EMF camp badge, base around the Arduino Leonardo, with on board
 IR, NRF24 Radio and RGB LED's.
 [Revealing TiLDA, our camp
 badge!](http://blog.emfcamp.org/post/28558155390/revealing-tilda-our-camp-badge)
