@@ -2,18 +2,23 @@ The aim of the EMF badge is to give people interesting hardware they've
 probably not experimented with before while being simple enough that
 anyone can play with it.
 
+## Contributing to this wiki
+
+We have moved this wiki from a 'traditional' mediawiki to a mkdocs site, due to
+a massive influx of spammers.  To contribute, send a pull request on the
+[badge-website](https://github.com/emfcamp/badge-website) github page.
+
 ## Contacting the badge team
 
 - matrix: [\#badge:emfcamp.org](https://matrix.to/#/#badge:emfcamp.org)
 - irc: **irc.libera.chat \#emfcamp-badge**
 - email: **badge@emfcamp.org**
 
-## EMF2024+ - Tildagon
+## EMF2024 & 2026 - Tildagon
 
-**[Tildagon documentation](https://tildagon.badge.emfcamp.org/)**
+![Assembled 2024 Tildagon](images/tildagon-2024-assembled.jpg "Assembled 2024 Tildagon")
 
-Announcement blog post: **[Tildagon: The EMF 2024+
-badge](https://blog.emfcamp.org/2024/03/18/tildagon/)**
+The tildagon documentation can be found on the dedicated [Tildagon documentation](https://tildagon.badge.emfcamp.org/) site.
 
 > Introducing the Tildagon: A reusable badge with modular components
 > upgraded at each event, and hexpansion slots to fill with your own
